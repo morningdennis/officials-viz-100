@@ -303,7 +303,7 @@ function renderPerson(p) {
 
     var endDisplay = esc(r['终止年']);
     if (!r['终止年'] && i === rows.length - 1 && !isMeta) {
-      endDisplay = '<strong>至今</strong>';
+      endDisplay = '至今';
     }
 
     h += '<tr'+(isMeta?' class="row-meta"':'')+'>';
