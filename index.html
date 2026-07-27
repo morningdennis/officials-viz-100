@@ -303,7 +303,9 @@ function renderPerson(p) {
 
     var endDisplay = esc(r['终止年']);
     if (!r['终止年'] && i === rows.length - 1 && !isMeta) {
-      endDisplay = '至今';
+      var job = r['职务内容']||'';
+      var notCurrent = /卸任|违纪|撤销|事故调查组|名誉主席|第十一届全国|第十二届全国|第十三届全国/.test(job);
+      if (!notCurrent) endDisplay = '至今';
     }
 
     h += '<tr'+(isMeta?' class="row-meta"':'')+'>';
