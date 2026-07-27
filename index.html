@@ -303,12 +303,12 @@ function renderPerson(p) {
 
     var endDisplay = esc(r['终止年']);
     if (!r['终止年'] && i === rows.length - 1 && !isMeta) {
-      endDisplay = '<strong style=\"color:#5d8a4e\">至今</strong>';
+      endDisplay = '<strong>至今</strong>';
     }
 
     h += '<tr'+(isMeta?' class="row-meta"':'')+'>';
     h += '<td class="col-years">'+esc(r['起始年'])+'</td>';
-    h += '<td class="col-years">'+(endDisplay || '<span class=\"empty-cell\">—</span>')+'</td>';
+    h += '<td class="col-years">'+(isMeta ? '' : (endDisplay || '<span class=\"empty-cell\">—</span>'))+'</td>';
     h += '<td class="col-content">'+esc(r['职务内容'])+'</td>';
     h += '<td class="col-level">'+(level?'<span class="lvl-tag '+lvlCls+'">'+esc(level)+'</span>':'<span class="empty-cell">—</span>')+'</td>';
     h += '<td class="col-tiaokuai">'+(tk?('<span class="tk-tag '+tkCls+'">'+esc(tk)+'</span>'):'<span class="empty-cell">—</span>')+'</td>';
