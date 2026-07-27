@@ -262,7 +262,7 @@ function renderPerson(p) {
   var birth = p['出生年份'];
   var edu = p['最高学历'];
   var party = p['入党年份'];
-  var sex = p['性别'] === '0' ? '男' : (p['性别'] === '1' ? '女' : '');
+  var sex = p['性别'] === '1' ? '男' : (p['性别'] === '0' ? '女' : '');
   var rows = p.career;
   var multiCount = rows.filter(function(r){return r['多源佐证']==='1';}).length;
 
